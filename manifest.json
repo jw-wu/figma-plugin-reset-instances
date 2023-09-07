@@ -1,0 +1,119 @@
+{
+  "name": "Reset instances",
+  "id": "1279343632524488398",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": [
+    "figma"
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  },
+  "menu": [
+    { "name": "Everything except content",
+      "command": "everythingExceptContent"
+    },
+
+    { "name": "Outermost instance only without content",
+      "command": "outermostInstanceOnlyExceptContent"
+    },
+
+    { "separator": true },
+
+    { "name": "All dimensions",
+      "command": "allDimensions"
+    },
+
+    { "name": "Width and height",
+      "command": "widthHeight"
+    },
+
+    { "name": "Width",
+      "command": "width"
+    },
+
+    { "name": "Height",
+      "command": "height"
+    },
+
+    { "name": "Max width",
+      "command": "maxWidth"
+    },
+
+    { "name": "Min width",
+      "command": "minWidth"
+    },
+
+    { "name": "Max height",
+      "command": "maxHeight"
+    },
+
+    { "name": "Min height",
+      "command": "minHeight"
+    },
+
+    { "separator": true },
+
+    { "name": "All padding",
+      "command": "allPadding"
+    },
+    { "name": "Top padding",
+      "command": "topPadding"
+    },
+    { "name": "Bottom padding",
+      "command": "bottomPadding"
+    },
+    { "name": "Left padding",
+      "command": "leftPadding"
+    },
+    { "name": "Right padding",
+      "command": "rightPadding"
+    },
+
+    { "separator": true },
+    
+    { "name": "All spacing",
+      "command": "allSpacing"
+    },
+    { "name": "Item spacing",
+      "command": "itemSpacing"
+    },
+    { "name": "Counter axis spacing",
+      "command": "counterAxisSpacing"
+    },
+
+    { "separator": true },
+    
+    { "name": "All radii",
+      "command": "allRadii"
+    },
+    { "name": "Top left radius",
+      "command": "topLeftRadius"
+    },
+    { "name": "Top right radius",
+      "command": "topRightRaidus"
+    },
+    { "name": "Bottom left radius",
+      "command": "bottomLeftRadius"
+    },
+    { "name": "Bottom right radius",
+      "command": "bottomRightRadius"
+    },
+
+    { "separator": true },
+    
+    { "name": "Visibility",
+      "command": "visibility"
+    },
+
+    { "separator": true },
+
+    { "name": "Modes",
+      "command": "allModes"
+    }
+  ]
+}
