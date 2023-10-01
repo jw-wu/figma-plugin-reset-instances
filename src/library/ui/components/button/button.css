@@ -1,0 +1,21 @@
+/* Button */
+
+
+.component.button.medium {
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  border-radius: var(--border-radius-medium);
+}
+
+.component.button .label {
+  width: 100%;
+
+  text-align: center;
+  font-size: var(--typography-body2-size) !important;
+
+  color: inherit;
+}

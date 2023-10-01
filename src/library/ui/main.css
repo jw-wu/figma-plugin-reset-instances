@@ -1,0 +1,49 @@
+/* Theme */
+
+@import "../../custom/ui-theme.css";
+@import "../../custom/ui-palette.css";
+
+
+/* Blocks */
+
+@import "./blocks/block.css";
+
+
+/* Components */
+
+@import "./components/textfield/textfield.css";
+@import "./components/checkbox/checkbox.css";
+@import "./components/button/button.css";
+
+
+
+body, div, input {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  color: var(--figma-color-text);
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* Disable event capturing in icon SVGs */
+
+.icon {
+  pointer-events: none;
+}
+
+
+
+/* Fill or hug */
+
+.fillContainer {
+  width: 100%;
+}

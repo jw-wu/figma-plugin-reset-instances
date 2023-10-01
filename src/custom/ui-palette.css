@@ -1,0 +1,14 @@
+.primary.contained {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.primary.contained:hover {
+  background-color: var(--color-primary-light);
+}
+
+.primary.outlined {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-primary);
+}

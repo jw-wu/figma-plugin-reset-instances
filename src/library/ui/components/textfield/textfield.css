@@ -1,0 +1,114 @@
+/* TextField */
+
+
+.component.textfield {
+  padding: 0.75rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  border-bottom: var(--border-divider);
+}
+
+.component.textfield:last-of-type {
+  border-bottom: 0;
+}
+
+
+
+/* Label */
+
+.component.textfield .label {
+  width: 100%;
+
+  padding-top: 0.5rem;
+
+  font-size: var(--typography-inputlabel-size) !important;
+}
+
+.component.textfield .suffixlabel {
+  flex-shrink: 10;
+
+  text-align: right;
+  font-size: var(--typography-inputlabel-size) !important;
+  color: var(--color-text-secondary);
+}
+
+
+
+/* Input wrapper */
+
+.component.textfield .inputwrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+
+
+/* Input */
+
+input {
+  margin: 0;
+  width: 100%;
+
+  outline: none;
+  border: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+
+  box-sizing: border-box;
+}
+
+input.small {
+  height: 2rem;
+
+  font-size: var(--typography-body1-size) !important;
+}
+
+input.medium {
+  height: 3rem;
+
+  font-size: var(--typography-h2-size) !important;
+  letter-spacing: -0.03em;
+}
+
+input.large {
+  height: 5rem;
+
+  font-size: var(--typography-h1-size) !important;
+  letter-spacing: -0.06em;
+}
+
+input.disabled {
+  color: var(--color-text-disabled);
+}
+
+
+
+/* Helper texts */
+
+.component.textfield .helpertext {
+  width: 100%;
+  height: 1rem;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+
+  font-size: var(--typography-inputlabel-size) !important;
+  color: var(--color-text-secondary);
+
+  transition: var(--animation-medium);
+}
+
+.component.textfield .helpertext.error {
+  color: var(--color-error);
+}
+
+.component.textfield .helpertext.hidden {
+  height: 1px;
+}
