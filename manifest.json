@@ -17,11 +17,11 @@
     ]
   },
   "menu": [
-    { "name": "Everything except content and fills",
+    { "name": "Everything except content",
       "command": "everything"
     },
 
-    { "name": "Outermost layer only without content and fills",
+    { "name": "Outermost layer only without content",
       "command": "outermost"
     },
 
