@@ -27,13 +27,13 @@ export class ResetTypographyLibrary {
   protected nodesWithoutStyle: {
     [ key: string ]: {
       font: FontName;
-      nodes: { id: string, referenceId: string }[];
+      nodes: { self: SceneNode, reference: SceneNode }[];
     }
   };
   protected nodesWithStyle: {
     [ key: string ]: { // Style id
       font: FontName;
-      nodes: { id: string, referenceId: string }[];
+      nodes: { self: SceneNode, reference: SceneNode }[];
     }
   };
   protected nodesWithMissingFonts: {
@@ -206,12 +206,12 @@ export class ResetTypographyLibrary {
               if (!this.nodesWithStyle[reference.textStyleId])
                 this.nodesWithStyle[reference.textStyleId] = {
                   font: reference.fontName,
-                  nodes: [ { id: node.id, referenceId: reference.id } ]
+                  nodes: [ { self: node, reference: reference } ]
                 };
 
               // Otherwise push in the node id.
               else {
-                this.nodesWithStyle[reference.textStyleId].nodes.push({ id: node.id, referenceId: reference.id });
+                this.nodesWithStyle[reference.textStyleId].nodes.push({ self: node, reference: reference });
               }
 
             }
@@ -224,12 +224,12 @@ export class ResetTypographyLibrary {
             if (!this.nodesWithoutStyle[fontFullName])
               this.nodesWithoutStyle[fontFullName] = {
                 font: reference.fontName,
-                nodes: [ { id: node.id, referenceId: reference.id } ]
+                nodes: [ { self: node, reference: reference } ]
               };
 
             // Otherwise push in the node id.
             else {
-              this.nodesWithoutStyle[fontFullName].nodes.push({ id: node.id, referenceId: reference.id });
+              this.nodesWithoutStyle[fontFullName].nodes.push({ self: node, reference: reference });
             }
 
           }
@@ -302,6 +302,8 @@ export class ResetTypographyLibrary {
     let styleIds = Object.keys(this.nodesWithStyle);
     if (styleIds.length !== 0) {
 
+      console.log(`%cLoading fonts for nodes with styles.`, consoleTheme.secondary);
+
       let loadFonts: Promise<void>[] = [ ];
 
       // Load fonts.
@@ -318,10 +320,10 @@ export class ResetTypographyLibrary {
         
         for (let collectedNode of collectedNodes) {
 
-          let node = figma.currentPage.findOne((n) => n.id === collectedNode.id),
-              reference = figma.currentPage.findOne((n) => n.id === collectedNode.referenceId);
+          let node = collectedNode.self,
+              reference = collectedNode.reference;
           
-          if (node?.type === "TEXT" && reference?.type === "TEXT") {
+          if (node.type === "TEXT" && reference.type === "TEXT") {
 
             node.textStyleId = styleId;
             node.textAlignHorizontal = reference.textAlignHorizontal;
@@ -345,6 +347,8 @@ export class ResetTypographyLibrary {
     let withoutStyleFontFullNames = Object.keys(this.nodesWithoutStyle);
     if (withoutStyleFontFullNames.length !== 0) {
 
+      console.log(`%cLoading fonts for nodes without styles.`, consoleTheme.secondary);
+
       let loadFonts: Promise<void>[] = [ ];
 
       // Load fonts.
@@ -362,9 +366,10 @@ export class ResetTypographyLibrary {
         
         for (let collectedNode of collectedNodes) {
 
-          let node = figma.currentPage.findOne((n) => n.id === collectedNode.id),
-              reference = figma.currentPage.findOne((n) => n.id === collectedNode.referenceId);
-          if (node?.type === "TEXT" && reference?.type === "TEXT") {
+          let node = collectedNode.self,
+              reference = collectedNode.reference;
+
+          if (node.type === "TEXT" && reference.type === "TEXT") {
 
             node.fontName = fontName;
             node.textAlignHorizontal = reference.textAlignHorizontal;
