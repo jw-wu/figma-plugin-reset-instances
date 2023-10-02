@@ -57,16 +57,6 @@
 
     { "name": "Typography",
       "command": "typography"
-    },
-
-    { "separator": true },
-
-    { "name": "Non-image fills",
-      "command": "allFills"
-    },
-
-    { "name": "Strokes",
-      "command": "allStrokes"
     }
   ]
 }

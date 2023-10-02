@@ -42,8 +42,6 @@ export const module = new OperationModule("everything", false, async () => {
       "Top left": 0, "Top right": 0, "Bottom right": 0, "Bottom left": 0,
     },
 
-    "Strokes": 0,
-
     "Modes": 0
 
   };
@@ -94,12 +92,6 @@ export const module = new OperationModule("everything", false, async () => {
         scoreCard.radius["Top right"] += radius.matchTopRightRadius(node, reference);
         scoreCard.radius["Bottom right"] += radius.matchBottomRightRadius(node, reference);
         scoreCard.radius["Bottom left"] += radius.matchBottomLeftRadius(node, reference);
-
-      }
-
-      if (type.canBeStroked(node) && type.canBeStroked(reference)) {
-
-        scoreCard["Strokes"] += color.matchStroke(node, reference);
 
       }
   

@@ -66,10 +66,6 @@ async function match(input: { [ key: string ]: boolean }): Promise<void> {
       "Top left": 0, "Top right": 0, "Bottom right": 0, "Bottom left": 0,
     },
 
-    "Strokes": 0,
-
-    "Fills": 0,
-
     "Modes": 0
 
   };
@@ -166,20 +162,6 @@ async function match(input: { [ key: string ]: boolean }): Promise<void> {
 
           if (input.radiusBottomLeft)
             scoreCard.radius["Bottom left"] += radius.matchBottomLeftRadius(node, reference);
-
-        }
-
-        if (type.canBeFilled(node) && type.canBeFilled(reference)) {
-
-          if (input.fill)
-            scoreCard["Fills"] += color.matchFill(node, reference);
-
-        }
-
-        if (type.canBeStroked(node) && type.canBeStroked(reference)) {
-
-          if (input.stroke)
-            scoreCard["Strokes"] += color.matchStroke(node, reference);
 
         }
     

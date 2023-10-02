@@ -60,8 +60,6 @@ others.node().style.fontSize = "var(--typography-body2-size)";
 others.node().style.fontWeight = "700";
 
 let fit = new Checkbox({ size: "medium", primaryText: "Fit" }),
-    fill = new Checkbox({ size: "medium", primaryText: "Fill" }),
-    stroke = new Checkbox({ size: "medium", primaryText: "Stroke" }),
     visibility = new Checkbox({ size: "medium", primaryText: "Visibility" }),
     mode = new Checkbox({ size: "medium", primaryText: "Modes" }),
     typography = new Checkbox({ size: "medium", primaryText: "Typography" });
@@ -75,7 +73,7 @@ let cta = new UIContainer({
     startPlugin,
     { hug: "fillContainer" })
 });
-cta.node().style.padding = "0.75rem";
+cta.node().style.padding = "2.25rem 0.75rem 0.75rem";
 
 let userInput = new UserInput({
 
@@ -108,8 +106,6 @@ let userInput = new UserInput({
   "others": others,
 
   "fit": fit,
-  "fill": fill,
-  "stroke": stroke,
   "visibility": visibility,
   "mode": mode,
   "typography": typography,
