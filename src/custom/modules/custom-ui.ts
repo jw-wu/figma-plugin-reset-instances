@@ -9,9 +9,6 @@
                       import { Checkbox } from "../../library/ui/components/checkbox/checkbox";
 
 
-// Log to console for debugging.
-console.log("%cUI created.", "color: #ccc");
-
 // Create UI.
 let ui = new core.UI();
 
